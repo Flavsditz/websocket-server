@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Chat WebSocket</title>
+
+    <link rel="stylesheet" href="resources/style/app.css"/>
+
+    <script src="resources/js/sockjs-0.3.4.js"></script>
+    <script src="resources/js/stomp.js"></script>
+    <script type="text/javascript" src="resources/js/app.js"></script>
+
+</head>
+
+<body onload="disconnect()">
+
+<div>
+    <div id="conversationDiv">
+        <div class="header">
+            <div class="disconnect" onclick="disconnect();">EXIT</div>
+        </div>
+        <div id="responseArea"></div>
+        <div class="footer">
+            <form onsubmit="sendMessage();return false">
+                <input type="text" id="text" placeholder="Write a message..."/>
+                <button type="submit">Send</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div id="loginWrapper">
+        <div class="loginArea">
+            <label for="userName">Please select an username</label>
+            <input type="text" id="userName" placeholder="Choose a nickname"/>
+            <button id="connect" onclick="connect();">Connect</button>
+            <div id="errorMessage"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
